@@ -66,3 +66,7 @@ gem 'devise'
 # devise日本語化
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+
+# Reduces boot times through caching; required in config/boot.rb
+
+gem 'pry-rails'

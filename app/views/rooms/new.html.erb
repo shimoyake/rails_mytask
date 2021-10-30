@@ -1,0 +1,30 @@
+ <h3>部屋登録</h3>
+ 
+    <%= form_with model: @rooms do |f| %>
+      <table>
+        <tr>
+          <th><%= f.label :room_name, "投稿内容" %></th>
+          <td><%= f.text_area :room_name, class:"rooms-content" %></td>
+        </tr>
+      </table>
+      
+      <div>
+        <ul>
+          <li><%= f.submit "投稿を完了する"%></li>
+        </ul>
+      </div>
+    <% end %>
+    
+    <h1>新規タスク</h1>
+<%= form_for(@room) do |f| %>
+  <div><%= f.label :room_name %></div>
+  <div><%= f.text_field :room_name %></div>
+  <div><%= f.submit %></div>
+<% end %>
+<%= link_to '戻る', rooms_path %>
+ 
+    <div>
+      <ul>
+        <li><%= link_to "ユーザー情報一覧に戻る", :rooms %></li>
+      </ul>
+    </div>
