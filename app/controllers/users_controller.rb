@@ -2,12 +2,13 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   
   def index
+    @user = current_user
     @users = User.all
     @rooms = Room.all 
   end
   
   def show
-    #@user = current_user
+    @user = current_user
     #@user = User.find(params[:id])
     @room = Room.new
   end

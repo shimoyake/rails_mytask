@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   
   #ルーム
   get 'rooms/index'
-  post 'rooms/' => 'rooms#create'
+  post 'rooms', to: 'rooms#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

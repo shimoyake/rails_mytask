@@ -1,25 +1,23 @@
 <h1>部屋一覧</h1>
 
-<table>
+  <table>
       <thead>
         <tr>
-          <th>ルーム</th>
-          <th>更新日時</th>
-          <th>投稿日時</th>
-          <th>投稿者(User_id)</th>
+          <th>名前</th>
+          <th>情報</th>
+          <th>料金</th>
         </tr>
       </thead>
+ 
       <tbody>
         <% @rooms.each do |room| %>
           <tr>
             <td><%= room.room_name %></td>
-            <td><%= post.updated_at.to_s(:datetime_jp) %></td>
-            <td><%= post.created_at.to_s(:datetime_jp) %></td>
-            <td><%= post.user_id %></td>
+            <td><%= room.introduction %></td>
+            <td><%= room.room_price %></td>
           </tr>
         <% end %>
-        
       </tbody>
     </table>
  
-    <p><%= link_to "ユーザー新規登録", :new_room %></p>
+    <p><%= link_to "ルーム情報新規登録", :new_room %></p>
