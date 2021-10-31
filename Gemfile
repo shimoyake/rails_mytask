@@ -69,4 +69,5 @@ gem 'devise-i18n-views'
 
 # Reduces boot times through caching; required in config/boot.rb
 
+
 gem 'pry-rails'

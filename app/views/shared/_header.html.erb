@@ -1,0 +1,54 @@
+<header class="header">
+    <head>
+      <title>PoteShare</title>
+      <meta name="csrf-param" content="authenticity_token" />
+      <meta name="csrf-token" content="zx/58JDG6B30dsAqD4IOIFcey9JxosytC9a6Mn1QNSckD3hRDwkdPTKwtq+q5+UCvF0l7jIZfnt6mgnvES54+A==" />
+      
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" media="all" href="/assets/application-a8ca4c276281a74646e94609ae4a0eee0a7918869ecc82a06fbbc9997e6fc3b5.css" data-turbolinks-track="reload" />
+      <script src="/packs/js/application-9afcbb5693aa87623e69.js" data-turbolinks-track="reload"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    </head>
+    
+    <div class="header-inner">
+      <div class="header-left-nav">
+          <a href="/"><img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" /></a>
+          <form action="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search" accept-charset="UTF-8" method="get">
+          <div class="header-sharch d-lg-inline-block d-none">
+            <input type="text" name="area" id="area" value="" class="form-control" placeholder="エリア" />
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="header-sharch d-lg-inline-block d-none">
+            <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="キーワード" />
+            <i class="fas fa-search"></i>
+          </div>
+          <input type="submit" name="commit" value="" class="d-none" data-disable-with="" />
+  </form>    </div>
+      <div class="header-right-nav">
+        <div class="nav-item d-sm-inline-block d-none">
+          フジイユウコ
+        </div>
+        <div class="nav-item">
+          <img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src="/uploads/user/image/904/Photos_Library.photoslibrary.zip" />
+          <ul class="header-nav-menu">
+            <li><a href="/rooms/new">ルーム登録</a></li>
+            <li><a href="/reservations">予約済みルーム一覧</a></li>
+            <li><a href="/rooms/posts">登録済みルーム一覧</a></li>
+            <li><a href="/users/account">設定</a></li>
+            <li><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <script>
+  $(function() {
+    $('.nav-trigger').click(function() {
+          $('.header-nav-menu').toggle(1500);
+      })
+  });
+</script>
