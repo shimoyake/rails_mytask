@@ -1,15 +1,30 @@
 <h1>予約内容確認</h1>
 
-<%= form_for @reserve do |f| %>
-  <%= @reserve.begin %>
-  <%= @reserve.end %>
-  <div class="actions">
-    <%= f.submit '投稿画面に戻る', name: 'back' %>
-  </div>
-  <div class="actions">
-    <%= f.submit '予約を完了する' %>
-  </div>
+<%= form_with model: @reserve, url:reserves_path, local: true do |f| %> <!--ルーティングエラー：url:飛ばしたいパス-->
+       <p>¥<%= @room.room_price %>/日</p>
+      <table>
+        <tr>
+          <th>人数</th>
+          <td><%= @reserve.begin %></td>
+        </tr>
+ 
+        <tr>
+          <th>チェックアウト</th>
+          <td><%= @reserve.end %></td>
+        </tr>
+ 
+        <tr>
+          <th>人数</th>
+          <td><%= @reserve.number_of_peple %></td>
+        </tr>
+      </table>
+      
+      <%= hidden_field_tag :room_id, @room.id %>
+ 
+      <div>
+        <ul>
+          <li><%= f.submit "予約する"%></li>
+        </ul>
+      </div>
 <% end %>
-    
 
-<%= link_to '戻る', :back %>

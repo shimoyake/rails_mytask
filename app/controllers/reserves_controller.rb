@@ -14,8 +14,11 @@ class ReservesController < ApplicationController
   end
   
   def confirm #予約確認画面
+    @room = Room.find(params[:room_id])
     @reserve = Reserve.new(reserve_params)
-    render :new if @reserve.invalid?
+  
+    @reserve.save
+      render :index if @reserve.invalid?
   end
   
   def create
@@ -33,9 +36,14 @@ class ReservesController < ApplicationController
     
   end
   
+  def update
+    
+  end
+  
   
   private
     def reserve_params
-      params.permit(:begin, :end, :number_of_peple ,:room_id).merge(user_id: current_user.id)
+      params.permit(:begin, :end, :number_of_peple, :room_id).merge(user_id: current_user.id)
     end
+    
 end
