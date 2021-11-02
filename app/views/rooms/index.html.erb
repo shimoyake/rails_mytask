@@ -4,17 +4,20 @@
  
       <tbody>
         <% @rooms.each do |room| %>
-          <tr>
+        <tr>
           <th>ルーム名</th>
           <td><%= room.room_name %></td>
-          <th>ルーム情報</th>
-          <td><%= room.introduction %></td>
+          <th>住所</th>
+          <td><%= room.room_area %></td>
+          <td><%= room.address %></td>
           <th>料金</th>
           <td><%= room.room_price %></td>
-          <td><%= link_to "確認する", room %></td>
+          <td><%= link_to "予約する", room %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
+    
+    <%= link_to "トップページへ戻る", root_path %>
  
-    <p><%= link_to "ルーム情報新規登録", :new_room %></p>
+    

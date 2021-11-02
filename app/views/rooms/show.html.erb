@@ -1,6 +1,10 @@
-<h1>登録済み部屋情報</h1>
+<h1>部屋情報</h1>
 
    <table>
+     <tr>
+        <th>部屋のイメージ</th>
+        <td><%= @room.room_image %></td>
+      </tr>
       <tr>
         <th>ルーム名</th>
         <td><%= @room.room_name %></td>
@@ -21,14 +25,10 @@
         <th>住所</th
         <td><%= @room.address %></td>
       </tr>
-      <tr>
-        <th>部屋のイメージ</th>
-        <td><%= @room.room_image %></td>
-      </tr>
     </table>
     
-    <p>予約する</p>
-     <%= form_with model: @reserve, url:reserves_path, local: true do |f| %> <!--ルーティングエラー：url:飛ばしたいパス-->
+     <%= form_with model: @reserve, url:reserves_confirm_path, local: true do |f| %> <!--ルーティングエラー：url:飛ばしたいパス-->
+       <p>¥<%= @room.room_price %>/日</p>
       <table>
         <tr>
           <th><%= f.label :begin ,"開始日" %></th>
@@ -55,4 +55,4 @@
       </div>
     <% end %>
  
-    <p><%= link_to "ルーム情報新規登録", :new_room %></p>
+    <p><%= link_to "トップページへ戻る", root_path %></p>

@@ -9,8 +9,13 @@ class ReservesController < ApplicationController
   
   def new #ルームの予約
     @user = current_user.id
-    @reserve = Reserve.new
     @rooms = Room.all
+    @reserves = Reserve.new
+  end
+  
+  def confirm #予約確認画面
+    @reserve = Reserve.new(reserve_params)
+    render :new if @reserve.invalid?
   end
   
   def create
@@ -20,7 +25,7 @@ class ReservesController < ApplicationController
     
     if @reserve.save
       flash[:notice]="登録しました"
-      redirect_to reserves_path
+      redirect_to '/reserves'
     else
       render "new"
       flash[:notice]="失敗しました"
@@ -28,10 +33,6 @@ class ReservesController < ApplicationController
     
   end
   
-  def show
-    @rooms = Room.all
-    @reserves = Reserve.all
-  end
   
   private
     def reserve_params
