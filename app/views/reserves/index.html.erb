@@ -1,10 +1,8 @@
-<h1>部屋一覧</h1>
+<h1>予約可能部屋一覧</h1>
 
-  <table>
- 
-      <tbody>
-        <% @rooms.each do |room| %>
-          <tr>
+    <% @rooms.each do |room| %>
+      <table>
+        <tr>
           <th>ルーム名</th>
           <td><%= room.room_name %></td>
           <th>ルーム情報</th>
@@ -13,8 +11,8 @@
           <td><%= room.room_price %></td>
           <td><%= link_to "確認する", room %></td>
         </tr>
-        <% end %>
-      </tbody>
-    </table>
- 
+      </table>
+    <% end %>
+    
+   
     <p><%= link_to "ルーム情報新規登録", :new_room %></p>

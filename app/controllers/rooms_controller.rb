@@ -11,27 +11,29 @@ class RoomsController < ApplicationController
     @user = current_user.id
   end
 
-    def create
-      
-      @user = current_user.id
-      @room = Room.new
-      if @room.save
-        binding.pry
-        flash[:notice]="登録しました"
-        redirect_to :rooms
-      else
-        render "new"
-        flash[:notice]="失敗しました"
-      end
-      
+  def create
+    @user = current_user.id
+    @room = Room.new(room_params)
+
+    if @room.save
+      flash[:notice]="登録しました"
+      redirect_to :rooms
+    else
+      render "new"
+      flash[:notice]="失敗しました"
     end
+  end
 
   def edit
     @room = Room.find(params[:id])
   end
+  
+  def show
+    @room = Room.find(params[:id]) 
+  end
 
   private
     def room_params
-      params.require(:room).permit(:room_name, :introduction, :room_price)
+      params.require(:room).permit(:room_name, :introduction, :room_price).merge(user_id: current_user.id)
     end
 end
