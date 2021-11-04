@@ -4,13 +4,11 @@ class ReservesController < ApplicationController
   def index #予約ルーム一覧
     @rooms = Room.all
     @reserves = Reserve.all
-  
   end
   
-  def new #ルームの予約
-    @user = current_user.id
-    @rooms = Room.all
-    @reserves = Reserve.new
+  def update
+    Reserve.create(reserve_params)
+    @reserve = Reserve.find(params[:id])
   end
   
   def confirm #予約確認画面
@@ -18,28 +16,20 @@ class ReservesController < ApplicationController
     @reserve = Reserve.new(reserve_params)
   
     @reserve.save
-      render :index if @reserve.invalid?
-  end
-  
-  def create
-    @user = current_user.id
-    @room = Room.find(params[:room_id])
-    @reserve = Reserve.new(reserve_params)
-    
-    if @reserve.save
-      flash[:notice]="登録しました"
-      redirect_to '/reserves'
-    else
-      render "new"
-      flash[:notice]="失敗しました"
-    end
-    
+      redirect_to '/reserves/new' if @reserve.invalid?
   end
   
   def update
-    
+    @reserve = Reserve.new(reserve_params)
+    #@reserve = Reserve.find(params[:id])
   end
   
+  def destroy
+      @reserve = Reserve.find(params[:id])
+      @reserve.destroy
+      flash[:notice] = "予約情報を削除しました"
+      redirect_to :reserves
+  end
   
   private
     def reserve_params

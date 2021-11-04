@@ -1,10 +1,16 @@
 <h1>予約済み部屋一覧</h1>
+    <% @rooms.each do |room| %>
+      <table>
+        <tr>
+          <th>ルーム名</th>
+          <td><%= room.room_name %></td>
+        </tr>
+      </table>
+    <% end %>
 
     <% @reserves.each do |reserve| %>
       <table>
         <tr>
-          <th>ルーム名</th>
-          <td><%= reserve.room.room_name %></td>
           <th>開始日</th>
           <td><%= reserve.begin %></td>
           <th>終了日</th>
@@ -12,6 +18,7 @@
           <th>人数</th>
           <td><%= reserve.number_of_peple %></td>
           <td><%= link_to "確認する", reserve %></td>
+          <td><%= link_to "削除", reserve, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
         </tr>
       </table>
     <% end %>

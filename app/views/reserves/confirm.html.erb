@@ -1,6 +1,6 @@
 <h1>予約内容確認</h1>
 
-<%= form_with model: @reserve, url:reserves_path, local: true do |f| %> <!--ルーティングエラー：url:飛ばしたいパス-->
+<%= form_with model: @reserve, url:new_reserf_path, local: true do |f| %>
        <p>¥<%= @room.room_price %>/日</p>
       <table>
         <tr>
