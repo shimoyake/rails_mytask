@@ -1,0 +1,16 @@
+<p>検索結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.room_area %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

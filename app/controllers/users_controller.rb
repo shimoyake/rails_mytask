@@ -2,28 +2,36 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @user = current_user
+    @user = current_user.id
     @users = User.all
     @rooms = Room.all 
   end
   
   def show
-    @user = current_user
+    @user = current_user.id
     #@user = User.find(params[:id])
     @room = Room.new
   end
   
-  def update
-     @user = User.new(params.require(:user).permit(:image,:name,:profile))
-     
-       if User.update(params.require(:user).permit(:image,:name,:profile))
-           
-         redirect_to users_show_path
-         flash[:notice] = "Profile was successfully updated."
-       else
-            
-           render users_show_path
-       end
+  def profile
+    @user = User.find_by(id: current_user.id)
   end
+  
+  def update
+     @user = User.find_by(id: current_user.id)
+     @user = User.update(user_params)
+     #binding.pry
+    if flash[:notice] = "更新しました"
+       redirect_to users_profile_path
+    else
+      flash[:notice] = "失敗しました"
+       render :new
+    end
+  end
+  
+  private
+    def user_params
+      params.require(:user).permit(:user_name, :user_introduction, :user_image).merge(id: current_user.id)
+    end
   
 end

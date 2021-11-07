@@ -1,0 +1,37 @@
+<html>
+  <div class="header">
+    
+    <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"), "/" %>
+    
+    <div class="search-form">
+      <%= form_with url: search_path, method: :get, local: true do |f| %>
+        <%= f.text_field :keyword, value: @keyword %>
+        <%= f.submit "検索" %>
+      <% end %>
+    </div>
+    
+    <button type="button" class="btn js-btn">
+      <span class="btn-line"></span>
+    </button>
+    <nav>
+      <ul class="menu">
+        <li class="menu-list">メニュー1</li>
+        <li class="menu-list">メニュー2</li>
+        <li class="menu-list">メニュー3</li>
+        <li class="menu-list">メニュー4</li>
+        <li class="menu-list">メニュー5</li>
+      </ul>
+    </nav>
+      
+  </div>
+  
+  <body>
+    <script>
+      $(function () {
+      $('.js-btn').on('click', function () { // js-btnクラスをクリックすると、
+        $('.menu , .btn , .btn-line').toggleClass('open'); // メニューとバーガーの線にopenクラスをつけ外しする
+      })
+    });
+    </script>
+  </body>
+</html>

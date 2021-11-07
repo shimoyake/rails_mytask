@@ -21,7 +21,6 @@ class ReservesController < ApplicationController
   
   def update
     @reserve = Reserve.new(reserve_params)
-    #@reserve = Reserve.find(params[:id])
   end
   
   def destroy
