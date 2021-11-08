@@ -1,37 +1,34 @@
+<!DOCTYPE html>
 <html>
-  <div class="header">
-    
-    <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"), "/" %>
-    
-    <div class="search-form">
-      <%= form_with url: search_path, method: :get, local: true do |f| %>
-        <%= f.text_field :keyword, value: @keyword %>
-        <%= f.submit "検索" %>
-      <% end %>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-left-nav">
+        <a href="/"><img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" /></a>
+        <form action="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search" accept-charset="UTF-8" method="get">
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="area" id="area" value="" class="form-control" placeholder="エリア" />
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="キーワード" />
+          <i class="fas fa-search"></i>
+        </div>
+        <input type="submit" name="commit" value="" class="d-none" data-disable-with="" />
+</form>    </div>
+    <div class="header-right-nav">
+      <div class="nav-item d-sm-inline-block d-none">user name</div>
+      <div class="nav-item">
+        <img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src="/uploads/user/image/904/Photos_Library.photoslibrary.zip" />
+        <ul class="header-nav-menu">
+          <li><a href="/rooms/new">ルーム登録</a></li>
+          <li><a href="/reserves">予約済みルーム一覧</a></li>
+          <li><a href="/rooms">登録済みルーム一覧</a></li>
+          <li><a href="/users/profile">設定</a></li>
+          <li><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
+        </ul>
+      </div>
     </div>
-    
-    <button type="button" class="btn js-btn">
-      <span class="btn-line"></span>
-    </button>
-    <nav>
-      <ul class="menu">
-        <li class="menu-list">メニュー1</li>
-        <li class="menu-list">メニュー2</li>
-        <li class="menu-list">メニュー3</li>
-        <li class="menu-list">メニュー4</li>
-        <li class="menu-list">メニュー5</li>
-      </ul>
-    </nav>
-      
   </div>
-  
-  <body>
-    <script>
-      $(function () {
-      $('.js-btn').on('click', function () { // js-btnクラスをクリックすると、
-        $('.menu , .btn , .btn-line').toggleClass('open'); // メニューとバーガーの線にopenクラスをつけ外しする
-      })
-    });
-    </script>
-  </body>
+</header>
 </html>

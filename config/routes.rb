@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   
   #ルーム
   get 'rooms/index'
-  post 'rooms/new', to: 'rooms#create'
+  get 'rooms/new'
+  post 'rooms/new' => 'rooms#create'
   get 'rooms/show'
   
   get 'reserves/index'
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
   get 'reserves/new', to: 'reserves#update'
   
   #検索
-  get 'search' => 'rooms#search'
+  get "/rooms/search" => "rooms#search", as: 'search'
   
   resources :users
   resources :rooms

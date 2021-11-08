@@ -7,16 +7,16 @@ class RoomsController < ApplicationController
   end
   
   def new
-    @user_id = current_user.id
-    @room = Room.new
+    @user = User.find_by(id: current_user.id)
+    #@room = Room.new
   end
 
   def create
-    @user_id = current_user.id
-    @room = Room.new(params.require(:room).permit(:room_name, :introduction, :room_price))
-    
+    @user = User.find_by(id: current_user.id)
+    @room = Room.new(room_params)
+    #binding.pry
     if @room.save
-      redirect_to :rooms
+      redirect_to '/rooms'
       flash[:notice]="登録しました"
     else
       render "new"
@@ -33,19 +33,14 @@ class RoomsController < ApplicationController
   end
   
   def search
-    if params[:room_area].present?
-      @rooms = Room.where("%#{params[:room_area]}%")
-    else
-      @rooms = Room.none
-    end
-    
-    #@rooms = Room.search(params[:room_area])
-    #@keyword = params[:room_area]
-    #render "rooms"
-  end
+	     #itemのtitleを曖昧検索
+        @rooms = Room.where('rooms.room_name LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
+        #フォームに入力した内容を取ってくる
+        @search_result = "#{params[:search]}"
+	end
 
   private
     def room_params
-      params.permit(:room_name, :introduction, :room_price).merge(user_id: current_user.id)
+      params.permit(:room_name, :introduction, :room_price, :search).merge(id: current_user.id)
     end
 end
