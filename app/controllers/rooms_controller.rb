@@ -12,15 +12,12 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(id: current_user.id)
     @room = Room.new(room_params)
-    #binding.pry
-    if @room.save
-      redirect_to '/rooms'
-      flash[:notice]="登録しました"
+    if @room.save(validate: false)
+      flash[:notice] = "お部屋を登録しました"
+      redirect_to rooms_path(current_user)
     else
       render "new"
-      flash[:notice]="失敗しました"
     end
   end
 
@@ -33,14 +30,14 @@ class RoomsController < ApplicationController
   end
   
   def search
-	     #itemのtitleを曖昧検索
-        @rooms = Room.where('rooms.room_name LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
-        #フォームに入力した内容を取ってくる
-        @search_result = "#{params[:search]}"
+	   #itemのtitleを曖昧検索
+    @rooms = Room.where('rooms.room_name LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
+    #フォームに入力した内容を取ってくる
+    @search_result = "#{params[:search]}"
 	end
 
   private
     def room_params
-      params.permit(:room_name, :introduction, :room_price, :search).merge(id: current_user.id)
+      params.permit(:room_name, :introduction, :room_price, :search).merge(user_id: current_user.id)
     end
 end
