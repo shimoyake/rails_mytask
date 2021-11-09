@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   
   #検索
   get "/rooms/search" => "rooms#search", as: 'search'
+  get "/rooms/search" => "rooms#search_area", as: 'search_area'
   
   resources :users
   resources :rooms
