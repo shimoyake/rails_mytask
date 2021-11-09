@@ -72,3 +72,7 @@ gem 'devise-i18n-views'
 gem 'pry-rails'
 
 gem 'ransack'
+
+#画像アップロード
+gem 'carrierwave'
+#gem 'rmagick'

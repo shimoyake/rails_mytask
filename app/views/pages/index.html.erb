@@ -38,7 +38,7 @@
                     <div class="form-area">
                         <p class="form-area-title mb-4">Potepan Shareでまだ体験したことのない旅をしよう</p>
                         <%= form_tag(search_path, :method => 'get') do %>
-                        <%= text_field_tag :search, params[:search_area], class: "form-control", id: "search", placeholder: "エリアを入力"%>
+                        <%= text_field_tag :search_area, params[:search_area], class: "form-control", id: "search", placeholder: "エリアを入力"%>
                         <%= submit_tag '検索' %>
                         <% end %>
                         <%= form_tag(search_path, :method => 'get') do %>
