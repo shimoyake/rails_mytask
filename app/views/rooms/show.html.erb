@@ -2,8 +2,7 @@
 
    <table>
      <tr>
-        <th>部屋のイメージ</th>
-        <td><%= image_tag @room.image.url %></td>
+        <td><%= image_tag @room.image.url, :size =>'750x430'%></td>
       </tr>
       <tr>
         <th>ルーム名</th>
@@ -56,3 +55,7 @@
     <% end %>
  
     <p><%= link_to "トップページへ戻る", root_path %></p>
+
+<footer class="footer">
+  <p>© 2020 POTEPAN.INC.</p>
+</footer>

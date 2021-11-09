@@ -42,6 +42,13 @@ class RoomsController < ApplicationController
     @search_result = "#{params[:search]}"
     end
   end
+  
+  def destroy
+      @room = Room.find(params[:id])
+      @room.destroy
+      flash[:notice] = "部屋情報を削除しました"
+      redirect_to :rooms
+  end
 
   private
     def room_params
