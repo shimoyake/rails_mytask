@@ -17,6 +17,21 @@
           <th><%= f.label :room_price ,"料金" %></th>
           <td><%= f.text_field :room_price %></td>
         </tr>
+        
+        <tr>
+          <th><%= f.label :room_area ,"都道府県" %></th>
+          <td><%= f.text_field :room_area %></td>
+        </tr>
+        
+        <tr>
+          <th><%= f.label :address ,"住所" %></th>
+          <td><%= f.text_field :address %></td>
+        </tr>
+        
+        <tr>
+          <th>ルーム画像</th>
+          <td><%= f.file_field :room_image %></td>
+        </tr>
       </table>
       
       <%= hidden_field_tag :user_id, @user_id %>

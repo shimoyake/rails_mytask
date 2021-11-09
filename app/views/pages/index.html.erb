@@ -16,16 +16,7 @@
 
   <body>
     
-    <%= render "shared/header" %>
-    
-    <%= link_to "ログイン", new_user_session_path%>
-<%= link_to "新規登録", new_user_registration_path%>
-<%= link_to "ユーザー編集", edit_user_registration_path%>
-<%= link_to "登録済ルーム一覧、予約できる部屋一覧", rooms_path%>
-<%= link_to "部屋登録", new_room_path%>
-<%= link_to "完了ページ", reserves_confirm_path%>
-
-<%= link_to "トップページへ戻る", root_path %>
+<%= render "shared/header" %>
 
 <div class="clearfix"></div>
 
@@ -47,7 +38,7 @@
                     <div class="form-area">
                         <p class="form-area-title mb-4">Potepan Shareでまだ体験したことのない旅をしよう</p>
                         <%= form_tag(search_path, :method => 'get') do %>
-                        <%= text_field_tag :search, params[:search], class: "form-control", id: "search_area", placeholder: "エリアを入力"%>
+                        <%= text_field_tag :search_area, params[:search_area], class: "form-control", id: "search_area", placeholder: "エリアを入力"%>
                         <%= submit_tag '検索' %>
                         <% end %>
 </form>                    </div>

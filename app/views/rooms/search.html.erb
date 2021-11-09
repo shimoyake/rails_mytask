@@ -1,8 +1,21 @@
 <p>検索結果</p>
 
 <h2>ルーム一覧"<%= @search_result %>"の検索結果(<%= @rooms.count %>件)</h2>
-<% @rooms.each do |room| %>
-    <%= room.room_name %>
-    <%= room.introduction %>
-    <%= room.room_price %>
-<% end %>
+    <table>
+        <tbody>
+            <% @rooms.each do |room| %>
+            <tr>
+              <th>ルーム名</th>
+              <td><%= room.room_name %></td>
+              <th>住所</th>
+              <td><%= room.room_area %></td>
+              <td><%= room.address %></td>
+              <th>料金</th>
+              <td><%= room.room_price %></td>
+              <td><%= link_to "予約する", room %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+<%= link_to "トップページへ戻る", root_path %>

@@ -31,13 +31,19 @@ class RoomsController < ApplicationController
   
   def search
 	   #itemのtitleを曖昧検索
-    @rooms = Room.where('rooms.room_name LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
+    if @rooms = Room.where('rooms.room_name LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
     #フォームに入力した内容を取ってくる
     @search_result = "#{params[:search]}"
-	end
+    
+    elsif @rooms = Room.where('rooms.room_area LIKE(?)', "%#{params[:search_area]}%").order(created_at: :desc)
+    #フォームに入力した内容を取ってくる
+    @search_result = "#{params[:sea_area]}"
+    #else @rooms.count == 0
+    end
+  end
 
   private
     def room_params
-      params.permit(:room_name, :introduction, :room_price, :search).merge(user_id: current_user.id)
+      params.permit(:room_name, :introduction, :room_price, :room_area, :address, :room_image, :search, :search_area).merge(user_id: current_user.id)
     end
 end

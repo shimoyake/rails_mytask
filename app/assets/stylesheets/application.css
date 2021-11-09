@@ -68,6 +68,7 @@ body{
 }
 .top .panel-image {
     height: 360px;
+    width: 100%;
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 25px;
@@ -100,4 +101,37 @@ body{
 }
 label {
     display: block;
+}
+.header-left-nav form {
+    display: inline-block;
+}
+.header-left-nav .form-control {
+    width: 180px;
+    display: inline-block;
+    position: relative;
+    border-radius: 2px;    
+    padding-left: 30px;
+}
+.fa-map-marker-alt:before {
+    content: "\f3c5";
+}
+.header-left-nav {
+    float: left;
+}
+
+/*ナビメニュー*/
+.header-nav-menu {
+    background-color: #fff;
+    border: 3px solid #F6F8F9;
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    padding: 15px;
+    z-index: 1000;
+}
+.header-nav-menu li {
+    line-height: 30px;
+    font-size: 16px;
+    padding: 3px 5px;
 }
