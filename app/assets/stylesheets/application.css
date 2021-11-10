@@ -1,3 +1,4 @@
+
 li{
   list-style: none;
 }
@@ -110,8 +111,8 @@ label {
     display: inline-block;
     position: relative;
     border-radius: 2px;    
-    padding-left: 30px;
 }
+
 .fa-map-marker-alt:before {
     content: "\f3c5";
 }

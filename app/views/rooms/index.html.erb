@@ -7,6 +7,12 @@
       <tbody>
         <% @rooms.each do |room| %>
         <tr>
+          <td><% if room.image.url%>
+              <%= image_tag room.image.url ,width: "330px",height: "180px" %>
+            <%else%>
+             <p>画像がありません</p>
+            <%end%>
+            </td>
           <th>ルーム名</th>
           <td><%= room.room_name %></td>
           <th>住所</th>

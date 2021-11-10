@@ -1,10 +1,13 @@
+<%= render "shared/header" %>
+
 <h1>プロフィール編集</h1>
     
     <%= form_with model: @user, url:users_profile_path, method: :post, local: true do |f| %>
       <table>
         <tr>
           <th>アイコン画像</th>
-          <td><%= f.file_field :user_image %></td>
+          <td></td>
+          <td><%= f.file_field :image %></td>
         </tr>
  
         <tr>
@@ -20,12 +23,8 @@
       
       <%= hidden_field_tag :user_id, @user_id %>
  
-      <div>
-        <ul>
-          <li><%= f.submit "更新する"%></li>
-          <li><%= link_to "トップページに戻る", root_path %></li>
-        </ul>
-      </div>
+      <div><%= f.submit "更新する"%></div>
+  
     <% end %>
 <%= link_to '戻る', rooms_path %>
 

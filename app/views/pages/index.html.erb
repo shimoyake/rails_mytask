@@ -1,34 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PoteShare</title>
-    <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="1Fb/oz+SfOmd2tsfO8DUMVnHaObyX35OCG1DWb2A0us+bzHVVyfFHJ1q1Y21OzbRgk7ig3JU0xxUtYqwM3EZ0Q==" />
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" media="all" href="/assets/application-a8ca4c276281a74646e94609ae4a0eee0a7918869ecc82a06fbbc9997e6fc3b5.css" data-turbolinks-track="reload" />
-    <script src="/packs/js/application-9afcbb5693aa87623e69.js" data-turbolinks-track="reload"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-  </head>
 
   <body>
     
 <%= render "shared/header" %>
 
-<div class="clearfix"></div>
-
-<script>
-  $(function() {
-    $('.nav-trigger').click(function() {
-          $('.header-nav-menu').toggle(1500);
-      })
-  });
-</script>
     <div class="notifications">
-        <div class="notice">Signed in successfully.</div>
     </div>
     <div class="top">
     <div class="top-main">
@@ -38,48 +15,47 @@
                     <div class="form-area">
                         <p class="form-area-title mb-4">Potepan Shareでまだ体験したことのない旅をしよう</p>
                         <%= form_tag(search_path, :method => 'get') do %>
-                        <%= text_field_tag :search_area, params[:search_area], class: "form-control", id: "search", placeholder: "エリアを入力"%>
-                        <%= submit_tag '検索' %>
+                            <%= text_field_tag :search_area, params[:search_area], class: "form-control", id: "search", placeholder: "エリアを入力"%>
+                            <%= submit_tag '検索' %>
                         <% end %>
-                        <%= form_tag(search_path, :method => 'get') do %>
-                        <%= text_field_tag :search, params[:search], class: "form-control", id: "search", placeholder: "キーワードアを入力"%>
-                        <%= submit_tag '検索' %>
-                        <% end %>
-</form>                    </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="container">
         <div class="panel-area m-5">
             <h1 class="section-title">おすすめのエリア</h1>
             <div class="row">
                 <div class="panel-item col-lg-3 col-6">
                     <span>東京</span>
-                    <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E6%9D%B1%E4%BA%AC"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" /></a>
+                    <a href="https://4e6d311e267643cd814fbfd5c58e1a0b.vfs.cloud9.us-east-2.amazonaws.com/rooms/search?utf8=%E2%9C%93&search_area=%E6%9D%B1%E4%BA%AC"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" /></a>
                     <div class="shadow"></div>
                 </div>
                 <div class="panel-item col-lg-3 col-6">
                     <span>大阪</span>
-                    <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E5%A4%A7%E9%98%AA"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg" /></a>
+                    <a href="https://4e6d311e267643cd814fbfd5c58e1a0b.vfs.cloud9.us-east-2.amazonaws.com/rooms/search?utf8=%E2%9C%93&search_area=%E5%A4%A7%E9%98%AA"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg" /></a>
                     <div class="shadow"></div>
                 </div>
                 <div class="panel-item col-lg-3 col-6">
                     <span>京都</span>
-                    <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E4%BA%AC%E9%83%BD"><img class="panel-image shadow" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg" /></a>
+                    <a href="https://4e6d311e267643cd814fbfd5c58e1a0b.vfs.cloud9.us-east-2.amazonaws.com/rooms/search?utf8=%E2%9C%93&search_area=%E4%BA%AC%E9%83%BD"><img class="panel-image shadow" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg" /></a>
                     <div class="shadow"></div>
                 </div>
                 <div class="panel-item col-lg-3 col-6">
                     <span>札幌</span>
-                    <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E6%9C%AD%E5%B9%8C"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg" /></a>
+                    <a href="https://4e6d311e267643cd814fbfd5c58e1a0b.vfs.cloud9.us-east-2.amazonaws.com/rooms/search?utf8=%E2%9C%93&search_area=%E6%9C%AD%E5%B9%8C"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg" /></a>
                     <div class="shadow"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
     <footer class="footer">
         <p>© 2020 POTEPAN.INC.</p>
     </footer>
+    
   </body>
 </html>

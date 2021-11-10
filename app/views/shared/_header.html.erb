@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <title>PoteShare</title>
+    
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="1Fb/oz+SfOmd2tsfO8DUMVnHaObyX35OCG1DWb2A0us+bzHVVyfFHJ1q1Y21OzbRgk7ig3JU0xxUtYqwM3EZ0Q==" />
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" media="all" href="/assets/application-a8ca4c276281a74646e94609ae4a0eee0a7918869ecc82a06fbbc9997e6fc3b5.css" data-turbolinks-track="reload" />
+    <script src="/packs/js/application-9afcbb5693aa87623e69.js" data-turbolinks-track="reload"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
+
 <header class="header">
   <div class="header-inner">
     <div class="header-left-nav">
@@ -14,7 +29,7 @@
         <div class="header-sharch d-lg-inline-block d-none">
           <i class="fas fa-search"></i>
           <%= form_tag(search_path, :method => 'get') do %>
-            <%= text_field_tag :search, params[:search], class: "form-control", id: "search", placeholder: "キーワードアを入力"%>
+            <%= text_field_tag :search, params[:search], class: "form-control", id: "search", placeholder: "キーワードを入力"%>
                         <% end %>
         </div>
         <input type="submit" name="commit" value="" class="d-none" data-disable-with="" />
@@ -33,5 +48,14 @@
       </div>
     </div>
   </div>
+  
+  <script>
+    $(function() {
+      $('.nav-trigger').click(function() {
+            $('.header-nav-menu').toggle(1500);
+        })
+    });
+  </script>
+
 </header>
 </html>
