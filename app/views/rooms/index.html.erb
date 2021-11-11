@@ -2,21 +2,20 @@
 
 <h1>部屋一覧</h1>
 
-  <table>
- 
+    <table>
       <tbody>
         <% @rooms.each do |room| %>
         <tr>
-          <td><% if room.image.url%>
+          <td>
+            <% if room.image.url%>
               <%= image_tag room.image.url ,width: "330px",height: "180px" %>
             <%else%>
              <p>画像がありません</p>
             <%end%>
-            </td>
+          </td>
           <th>ルーム名</th>
           <td><%= room.room_name %></td>
           <th>住所</th>
-          <td><%= room.room_area %></td>
           <td><%= room.address %></td>
           <th>料金</th>
           <td><%= room.room_price %></td>
@@ -27,7 +26,6 @@
       </tbody>
     </table>
     
-    <%= link_to "トップページへ戻る", root_path %>
  
  <footer class="footer">
   <p>© 2020 POTEPAN.INC.</p>

@@ -33,7 +33,7 @@ class RoomsController < ApplicationController
   def search
     #binding.pry
     if params[:search_area].present?
-    @rooms = Room.where('rooms.room_area LIKE(?)', "%#{params[:search_area]}%")
+    @rooms = Room.where('rooms.address LIKE(?)', "%#{params[:search_area]}%")
     @search_result = "#{params[:search_area]}"
     
     #binding.pry
@@ -52,6 +52,6 @@ class RoomsController < ApplicationController
 
   private
     def room_params
-      params.permit(:room_name, :introduction, :room_price, :room_area, :address, :image, :search, :search_area).merge(user_id: current_user.id)
+      params.permit(:room_name, :introduction, :room_price, :address, :image, :search, :search_area).merge(user_id: current_user.id)
     end
 end

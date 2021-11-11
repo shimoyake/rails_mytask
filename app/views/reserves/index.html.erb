@@ -1,4 +1,4 @@
-
+<%= render "shared/header" %>
 
 <h1>予約済み部屋一覧</h1>
     <% @rooms.each do |room| %>
@@ -9,7 +9,6 @@
         </tr>
       </table>
     <% end %>
-
     <% @reserves.each do |reserve| %>
       <table>
         <tr>
@@ -19,14 +18,12 @@
           <td><%= reserve.end %></td>
           <th>人数</th>
           <td><%= reserve.number_of_peple %></td>
-          <td><%= link_to "確認する", reserve %></td>
           <td><%= link_to "削除", reserve, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
         </tr>
       </table>
     <% end %>
     
     <p><%= link_to "部屋を予約する", rooms_path %></p>
-    <p><%= link_to "トップページへ戻る", root_path %></p>
 
 <footer class="footer">
   <p>© 2020 POTEPAN.INC.</p>

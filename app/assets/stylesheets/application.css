@@ -1,4 +1,5 @@
 
+
 li{
   list-style: none;
 }
@@ -135,4 +136,106 @@ label {
     line-height: 30px;
     font-size: 16px;
     padding: 3px 5px;
+}
+
+/*ルーム登録ページ*/
+.page-tittle{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.view-back{
+    padding: 100px auto;
+    display: flex;
+}
+.view-new{
+    width: 800px;
+    border-bottom: 1px solid #eaedef;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.form-list tr{
+    vertical-align: middle;
+    border-bottom: 1px solid #eaedef;
+    margin-top: 20px;
+}
+.form-list th{
+    padding-right: 100px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.form-list span{
+    color: #fff;
+    background-color: #ff0000a8;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 0 5px;
+}
+.button{
+    margin-top: 50px;
+    text-align: center;
+}
+input[type="text"] {
+        width: 500px;
+        height: 40px;
+}
+input[type="number"] {
+        width: 500px;
+        height: 40px;
+}
+input[type="date"] {
+        width: 500px;
+        height: 40px;
+}
+
+/*部屋詳細*/
+.room-view{
+    border-bottom: 1px solid #eaedef;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.room-show{
+    display: flex;
+}
+.room-image{
+    margin-right: 30px;
+    hight: auto;
+}
+
+/*検索結果*/
+.room-image-out {
+    position: relative;
+    width: 100%;
+    background: #F6F8F9;
+    border: 1px solid #e2e2e2;
+    margin-bottom: 10px;
+    text-align: center;
+    
+}
+.room-image-box{
+   padding: 20px;
+   width: 300px;
+}
+.room-info{
+    text-align: center;
+}
+.form-box{
+    width: 320px;
+}
+
+/*アカウント設定　リンクメニュー*/
+.side-link li{
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 50px;
+}
+.side-link{
+    margin-bottom: -150px;
+}
+.user-delete{
+    margin-top: 30px;
+    border-top: 1px solid #eaedef;
+}
+.user-delete h5{
+    padding-top: 10px;
 }

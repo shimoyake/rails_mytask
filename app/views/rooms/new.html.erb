@@ -1,50 +1,46 @@
+<%= render "shared/header" %>
 
-<h1>部屋登録</h1>
-    
-    <%= form_with model: @room, url:rooms_path, method: :post, local: true do |f| %>
-      <table>
-        <tr>
-          <th><%= f.label :room_name ,"名前" %></th>
-          <td><%= f.text_field :room_name %></td>
-        </tr>
- 
-        <tr>
-          <th><%= f.label :introduction ,"情報" %></th>
-          <td><%= f.text_field :introduction %></td>
-        </tr>
- 
-        <tr>
-          <th><%= f.label :room_price ,"料金" %></th>
-          <td><%= f.text_field :room_price %></td>
-        </tr>
+    <div class="view-back">
+      <div class="view-new">
+        <h1 class="page-tittle">部屋登録</h1>
         
-        <tr>
-          <th><%= f.label :room_area ,"都道府県" %></th>
-          <td><%= f.text_field :room_area %></td>
-        </tr>
-        
-        <tr>
-          <th><%= f.label :address ,"住所" %></th>
-          <td><%= f.text_field :address %></td>
-        </tr>
-        
-        <tr>
-          <th>ルーム画像</th>
-          <td><%= f.file_field :image %></td>
-        </tr>
-      </table>
-      
-      <%= hidden_field_tag :user_id, @user_id %>
- 
-      <div>
-        <ul>
-          <li><%= f.submit "登録完了する"%></li>
-          <li><%= link_to "ユーザー情報一覧に戻る", :rooms %></li>
-        </ul>
+        <%= form_with model: @room, url:rooms_path, method: :post, local: true do |f| %>
+          <div class="form-list">
+            <table>
+              <tr>
+                <th><%= f.label :room_name ,"ルーム名" %><span>必須</span></th>
+                <td><%= f.text_field :room_name, placeholder: "ルーム名を入力" %></td>
+              </tr>
+       
+              <tr>
+                <th><%= f.label :introduction ,"ルーム紹介" %><span>必須</span></th>
+                <td><%= f.text_field :introduction, placeholder: "ルーム紹介を入力" %></td>
+              </tr>
+       
+              <tr>
+                <th><%= f.label :room_price ,"料金" %><span>必須</span></th>
+                <td><%= f.number_field :room_price, mini:"1", placeholder: "設定料金を入力" %></td>
+              </tr>
+              
+              <tr>
+                <th><%= f.label :address ,"住所" %><span>必須</span></th>
+                <td><%= f.text_field :address, placeholder: "住所を入力"%></td>
+              </tr>
+              
+              <tr>
+                <th>ルーム画像<span>必須</span></th>
+                <td><%= f.file_field :image %></td>
+              </tr>
+            </table>
+          </div>
+          
+          <%= hidden_field_tag :user_id, @user_id %>
+     
+          <div class="button"><%= f.submit "登録完了する"%></div>
+        <% end %>
       </div>
-    <% end %>
-<%= link_to '戻る', rooms_path %>
-
+    </div>
+    
 <footer class="footer">
   <p>© 2020 POTEPAN.INC.</p>
 </footer>

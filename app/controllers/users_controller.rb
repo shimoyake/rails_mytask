@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   
   def show
     @user = current_user.id
-    #@user = User.find(params[:id])
     @room = Room.new
   end
   

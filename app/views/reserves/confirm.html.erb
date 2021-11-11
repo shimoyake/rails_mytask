@@ -1,32 +1,50 @@
-<h1>予約内容確認</h1>
+<%= render "shared/header" %>
 
-<%= form_with model: @reserve, url:new_reserf_path, local: true do |f| %>
-       <p>¥<%= @room.room_price %>/日</p>
-      <table>
-        <tr>
-          <th>チェックイン</th>
-          <td><%= @reserve.begin %></td>
-        </tr>
- 
-        <tr>
-          <th>チェックアウト</th>
-          <td><%= @reserve.end %></td>
-        </tr>
- 
-        <tr>
-          <th>人数</th>
-          <td><%= @reserve.number_of_peple %></td>
-        </tr>
-      </table>
-      
-      <%= hidden_field_tag :room_id, @room.id %>
- 
-      <div>
-        <ul>
-          <li><%= f.submit "予約する"%></li>
-        </ul>
-      </div>
-<% end %>
+<div class="view-back">
+    <div class="room-view">
+      <h1 class="page-tittle">予約内容確認</h1>
+        
+          <div class="room-show form-list">
+            <div class="room-image">
+              <% if @room.image.url%>
+                <%= image_tag @room.image.url ,width: "600px",height: "350px" %>
+              <%else%>
+                <p>画像がありません</p>
+              <%end%>
+            </div>
+            
+            <div class="room-info">
+              <%= form_with model: @reserve, url:new_reserf_path, local: true do |f| %>
+              <table>
+                <tr>
+                  <th>チェックイン</th>
+                  <td><%= @reserve.begin %></td>
+                </tr>
+       
+                <tr>
+                  <th>チェックアウト</th>
+                  <td><%= @reserve.end %></td>
+                </tr>
+       
+                <tr>
+                  <th>人数</th>
+                  <td><%= @reserve.number_of_peple %>人</td>
+                </tr>
+              
+                <tr>
+                  <th>料金</th>
+                  <td><%= @room.room_price %>円/日</td>
+                </tr>
+              </table>
+                  <div class="button"><%= f.submit "予約する"%></div>
+              <% end %>    
+            </div>
+            
+          </div>
+        </div>
+          
+    </div>
+  </div>
 
 <footer class="footer">
         <p>© 2020 POTEPAN.INC.</p>
