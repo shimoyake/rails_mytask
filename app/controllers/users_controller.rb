@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   
   def profile
     @user = User.find_by(id: current_user.id)
+    #@user = User.find_by(id: params[:id])
   end
   
   def update

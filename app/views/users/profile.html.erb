@@ -15,6 +15,12 @@
               <table>
                 <tr>
                   <th>アイコン画像</th>
+                  <td><% if @user.image.url%>
+                        <%= image_tag @user.image.url ,width: "150px",height: "150px" %>
+                      <%else%>
+                        <p>画像がありません</p>
+                      <%end%>
+                      </td>
                   <td><%= f.file_field :image %></td>
                 </tr>
          
