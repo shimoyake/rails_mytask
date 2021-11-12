@@ -14,9 +14,13 @@ class ReservesController < ApplicationController
   def confirm #予約確認画面
     @room = Room.find(params[:room_id])
     @reserve = Reserve.new(reserve_params)
-  
-    @reserve.save
+    
+    if @reserve.save(validate: true)
       redirect_to '/reserves/new' if @reserve.invalid?
+    else
+      flash[:notice] = "必須項目を全て入力してください。チェックアウトはチェックインの日付より後に設置してください。"
+      redirect_to "/rooms/#{params[:room_id]}"
+    end
   end
   
   def update

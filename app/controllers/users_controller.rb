@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     if flash[:notice] = "更新しました"
        redirect_to users_profile_path
     else
-      flash[:notice] = "失敗しました"
+      flash[:notice] = "必須項目を全て入力してください"
        render :new
     end
   end

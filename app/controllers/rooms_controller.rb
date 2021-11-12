@@ -8,16 +8,17 @@ class RoomsController < ApplicationController
   
   def new
     @user = User.find_by(id: current_user.id)
-    #@room = Room.new
   end
 
   def create
+    @user = User.find_by(id: current_user.id)
     @room = Room.new(room_params)
-    if @room.save(validate: false)
+    if @room.save(validate: true)
       flash[:notice] = "お部屋を登録しました"
       redirect_to rooms_path(current_user)
     else
-      render "new"
+      flash[:notice] = "必須項目を全て入力してください"
+      render 'new'
     end
   end
 

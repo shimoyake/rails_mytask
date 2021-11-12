@@ -4,8 +4,10 @@
       <div class="view-new">
         <h1 class="page-tittle">部屋登録</h1>
         
+        
         <%= form_with model: @room, url:rooms_path, method: :post, local: true do |f| %>
           <div class="form-list">
+            
             <table>
               <tr>
                 <th><%= f.label :room_name ,"ルーム名" %><span>必須</span></th>

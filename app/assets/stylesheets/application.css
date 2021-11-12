@@ -16,6 +16,7 @@ body{
   width: 100%;
   height: 70px;
   background-color: #000000;
+  margin-top: -58px;
 }
 
 .footer {
@@ -100,6 +101,11 @@ body{
     font-size: 28px;
     line-height: 33px;
     letter-spacing: 1px;
+}
+.top .form-fream {
+    height: 650px;
+    display: flex;
+    align-items: center;
 }
 label {
     display: block;
@@ -238,4 +244,9 @@ input[type="date"] {
 }
 .user-delete h5{
     padding-top: 10px;
+}
+
+.user-icon img{
+    border-radius: 70%;
+    margin-bottom: 10px;
 }
