@@ -75,4 +75,3 @@ gem 'ransack'
 
 #画像アップロード
 gem 'carrierwave'
-#gem 'rmagick'

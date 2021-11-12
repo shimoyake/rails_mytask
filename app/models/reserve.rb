@@ -1,6 +1,6 @@
 class Reserve < ApplicationRecord
-  belongs_to :room, optional: true
-  belongs_to:user, optional: true
+  belongs_to :room
+  belongs_to:user
   
   validates :begin, presence: true
   validates :end, presence: true
