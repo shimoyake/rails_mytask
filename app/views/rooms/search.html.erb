@@ -1,42 +1,44 @@
 <%= render "shared/header" %>
 
-  <h4 class"page-tittle">"<%= @search_result %>"の検索結果(<%= @rooms.count %>件)</h4>
-    
-      <div class="room-show">
-        <% @rooms.each do |room| %>
-        <div class="room-image-out">
-          <div class="form-list form-bo">
-            <div class="room-image-box">
-              <% if room.image.url%>
-                <%= image_tag room.image.url ,width: "300px",height: "200px" %>
-              <%else%>
-                <p>画像がありません</p>
-              <%end%>
-            </div>
-              
-            <div class="room-info">
-               <table>
-                  <tr>
-                    <td><%= room.room_name %></td>
-                  </tr>
-                  <tr>
-                    <td><%= room.introduction %></td>
-                  </tr>
-                  <tr>
-                    <td><%= room.room_price %>円/日</td>
-                  </tr>
-                    <td><%= room.address %></td>
-                  </tr>
-                  </tr>
-                    <td><%= link_to "ルーム詳細へ", room %></td>
-                  </tr>
-                </table>
-            </div>    
-          </div>
-        </div>
-        <% end %>
-      </div>
+<div class="view-back">
+  <div class="room-view">
 
+    <h1 class="page-tittle">"<%= @search_result %>"の検索結果(<%= @rooms.count %>件)</h1>
+      
+      <div class="room-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ルーム画像</th>
+              <th>ルーム名</th>
+              <th>ルーム紹介</th>
+              <th>料金</th>
+              <th>住所</th>
+            </tr>
+          </thead>
+     
+          <tbody>
+            <% @rooms.each do |room| %>
+              <tr>
+                <td><% if room.image.url%>
+                      <%= image_tag room.image.url ,width: "330px",height: "180px" %>
+                    <%else%>
+                     <p>画像がありません</p>
+                    <%end%>
+                </td>
+                <td><%= room.room_name %></td>
+                <td><%= room.introduction %></td>
+                <td><%= room.room_price %></td>
+                <td><%= room.address %></td>
+                <td><%= link_to "ルーム詳細へ", room %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      
+  </div>
+</div>
 
 <footer class="footer">
   <p>© 2020 POTEPAN.INC.</p>

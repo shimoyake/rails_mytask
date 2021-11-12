@@ -250,3 +250,15 @@ input[type="date"] {
     border-radius: 70%;
     margin-bottom: 10px;
 }
+
+/*部屋一覧画面*/
+.room-table td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    border-top: 1px solid #eaedef;
+}
+.room-table th{
+    padding-right: 30px;
+    text-align: center;
+}

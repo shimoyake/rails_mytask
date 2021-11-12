@@ -3,7 +3,7 @@ class ReservesController < ApplicationController
   
   def index #予約ルーム一覧
     @rooms = Room.all
-    @reserves = Reserve.all
+    @reserves = Reserve.where(user_id: current_user.id )
   end
   
   def update
