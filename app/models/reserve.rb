@@ -6,6 +6,7 @@ class Reserve < ApplicationRecord
   validates :end, presence: true
   validates :number_of_peple, presence: true
   
+  #日付の逆転
   validate :start_end_check
   
   def start_end_check

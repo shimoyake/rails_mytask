@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @users = User.all
+    @user = User.find_by(id: current_user.id)
     @rooms = Room.all 
   end
   
@@ -22,21 +22,24 @@ class RoomsController < ApplicationController
   end
 
   def edit
+    @user = User.find_by(id: current_user.id)
     @room = Room.find(params[:id])
   end
   
   def show
+    @user = User.find_by(id: current_user.id)
     @room = Room.find(params[:id]) 
   end
   
   
   def search
+    @user = User.find_by(id: current_user.id)
     if params[:search_area].present?
     @rooms = Room.where('rooms.address LIKE(?)', "%#{params[:search_area]}%")
     @search_result = "#{params[:search_area]}"
     
     elsif params[:search].present?
-    @rooms = Room.where('rooms.room_name LIKE(?)', "%#{params[:search]}%")
+    @rooms = Room.where('rooms.room_name LIKE(?) OR introduction LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%")
     @search_result = "#{params[:search]}"
     end
   end

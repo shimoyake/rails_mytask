@@ -2,16 +2,13 @@ class ReservesController < ApplicationController
   before_action :authenticate_user!
   
   def index #予約ルーム一覧
+    @user = User.find_by(id: current_user.id)
     @rooms = Room.all
     @reserves = Reserve.where(user_id: current_user.id )
   end
   
-  def update
-    Reserve.create(reserve_params)
-    @reserve = Reserve.find(params[:id])
-  end
-  
   def confirm #予約確認画面
+    @user = User.find_by(id: current_user.id)
     @room = Room.find(params[:room_id])
     @reserve = Reserve.new(reserve_params)
     
@@ -24,6 +21,7 @@ class ReservesController < ApplicationController
   end
   
   def update
+    @user = User.find_by(id: current_user.id)
     @reserve = Reserve.new(reserve_params)
   end
   

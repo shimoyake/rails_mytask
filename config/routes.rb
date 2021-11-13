@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'pages/show'
   
+  #プロフィール
   get 'users/profile' => 'users#profile'
   post 'users/profile' => 'users#update'
   
@@ -20,11 +21,9 @@ Rails.application.routes.draw do
   post 'rooms/new' => 'rooms#create'
   get 'rooms/show'
   
+  #
   get 'reserves/index'
-  #post 'reserves', to: 'reserves#create'
-  
   post 'reserves/confirm', to: 'reserves#confirm'
-  
   patch '/reserves', to: 'reserves#create'
   get 'reserves/new', to: 'reserves#update'
   
@@ -35,7 +34,4 @@ Rails.application.routes.draw do
   resources :users
   resources :rooms
   resources :reserves
-  
-  #予約確認
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -24,14 +24,14 @@
           <div class="header-sharch d-lg-inline-block d-none">
             <i class="fas fa-map-marker-alt"></i>
             <%= form_tag(search_path, :method => 'get') do %>
-              <%= text_field_tag :search_area, params[:search], class: "form-control", id: "room_area", placeholder: "エリアを入力"%>
+              <%= text_field_tag :search_area, params[:search_area], class: "form-control", id: "room_area", placeholder: "エリアを入力"%>
             <% end %>
           </div>
           <div class="header-sharch d-lg-inline-block d-none">
             <i class="fas fa-search"></i>
             <%= form_tag(search_path, :method => 'get') do %>
               <%= text_field_tag :search, params[:search], class: "form-control", id: "search", placeholder: "キーワードを入力"%>
-                          <% end %>
+            <% end %>
           </div>
         <input type="submit" name="commit" value="" class="d-none" data-disable-with="" /></form>    
     </div>

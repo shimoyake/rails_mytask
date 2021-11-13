@@ -25,13 +25,13 @@
                 </tr>
          
                 <tr>
-                  <th><%= f.label :user_name ,"名前" %><span>必須</span></th>
+                  <th><%= f.label :user_name ,"名前" %></th>
                   <td><%= f.text_field :user_name %></td>
                 </tr>
          
                 <tr>
                   <th><%= f.label :user_introduction ,"自己紹介" %></th>
-                  <td><%= f.text_field :user_introduction %></td>
+                  <td><%= f.text_area :user_introduction, size: "30x7" %></td>
                 </tr>
               </table>
             </div>
