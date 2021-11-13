@@ -6,6 +6,7 @@ class CreateReserves < ActiveRecord::Migration[5.2]
       t.string :number_of_peple
       t.integer :user_id
       t.integer :room_id
+      t.string :total
 
       t.timestamps
     end
