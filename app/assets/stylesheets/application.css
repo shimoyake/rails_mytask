@@ -143,6 +143,15 @@ label {
     font-size: 16px;
     padding: 3px 5px;
 }
+.header-right-nav {
+    float: right;
+}
+.header .nav-item {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+}
+
 
 /*ルーム登録ページ*/
 .page-tittle{
@@ -248,6 +257,7 @@ input[type="date"] {
 
 .user-icon img{
     border-radius: 70%;
+    margin-top: 5px;
     margin-bottom: 10px;
 }
 
@@ -261,4 +271,9 @@ input[type="date"] {
 .room-table th{
     padding-right: 30px;
     text-align: center;
+}
+
+/*登録、ログイン*/
+.actions{
+    margin-bottom: 30px;
 }

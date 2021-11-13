@@ -33,7 +33,6 @@
                 <td><%= room.address %></td>
                 <td><%= room.created_at %></td>
                 <td><%= link_to "予約する", room %></td>
-                <td><%= link_to "削除", room, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
               </tr>
             <% end %>
           </tbody>

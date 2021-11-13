@@ -15,11 +15,12 @@
               <table>
                 <tr>
                   <th>アイコン画像</th>
-                  <td><div class="user-icon"><% if @user.image.url%>
-                        <%= image_tag @user.image.url ,width: "150px",height: "150px" %>
-                      <%else%>
-                        <p>画像がありません</p>
-                      <%end%>
+                  <td><div class="user-icon">
+                    <% if @user.image? %>
+                      <img src='<%= @user.image %>' class="icon" alt="ユーザーアイコン" width="150" height="150" >
+                    <% else %>
+                      <image src="/assets/default" class="icon" alt="ユーザーアイコン" width="150" height="150"%>
+                    <% end %>
                     <%= f.file_field :image %></div></td>
                 </tr>
          
